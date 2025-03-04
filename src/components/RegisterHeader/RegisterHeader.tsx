@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link, useMatch } from 'react-router-dom'
 
 export default function RegisterHeader() {
+  const login = useMatch('/login')
+  console.log('match', login)
+
   return (
     <header className='py-5'>
       <div className='mx-auto max-w-7xl px-4'>
@@ -12,7 +15,7 @@ export default function RegisterHeader() {
               </g>
             </svg>
           </Link>
-          <div className='ml-5 text-xl lg:text-2xl'>Đăng Nhập</div>
+          <div className='ml-5 text-xl lg:text-2xl'>{login ? 'Đăng Nhập' : 'Đăng Ký'}</div>
         </nav>
       </div>
     </header>
